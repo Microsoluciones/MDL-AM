@@ -32,6 +32,7 @@ char teclas[cantidadFilas][cantidadColumnas] = {
 Keypad keypad = Keypad( makeKeymap(teclas), pinFilas, pinColumnas, cantidadFilas, cantidadColumnas );
 
 int initGPIO (void){
+  /*
   pinMode(t1,INPUT_PULLUP);
   pinMode(t2,INPUT_PULLUP);
   pinMode(t3,INPUT_PULLUP);
@@ -39,6 +40,7 @@ int initGPIO (void){
   pinMode(t5,INPUT_PULLUP);
   pinMode(t6,INPUT_PULLUP);
   pinMode(t7,INPUT_PULLUP);
+  */
   pinMode(relay,OUTPUT);
   pinMode(Error,OUTPUT);
   return 0;
@@ -49,7 +51,7 @@ int checkPassword(void) {
 
   for (int i = 0; i < largopassword; i++) {
     password[i] = keypad.waitForKey();
-    Serial.print("Tecla Presionada: %c"); Serial.println(password[i]);
+    Serial.print("Tecla Presionada: "); Serial.println(password[i]);
     if (PASSWORD[i] != password[i]) {
       return 1;
       Serial.println("ERROR, return salteado");
