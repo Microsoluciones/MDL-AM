@@ -1,4 +1,6 @@
 #include "Keypad.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 //Declaraciones de pinout.
 const int t1      = A0;
@@ -46,7 +48,8 @@ int checkPassword(void) {
   char password[largopassword];
 
   for (int i = 0; i < largopassword; i++) {
-    password[i] = keypad.getKey();
+    password[i] = keypad.waitForKey();
+    Serial.print("Tecla Presionada: %c"); Serial.println(password[i]);
     if (PASSWORD[i] != password[i]) {
       return 1;
       Serial.println("ERROR, return salteado");
@@ -66,7 +69,6 @@ void setup() {
 }
 
 void loop() {
-  key = keypad.getKey();
   if(checkPassword() == 0){
     digitalWrite(relay,LOW); Serial.println("Relay Apagado: Electroiman Desactivado...");
   }else Serial.println("Digito Incorrecto.");
