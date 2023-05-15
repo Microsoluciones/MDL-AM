@@ -71,5 +71,6 @@ void setup() {
 void loop() {
   if(checkPassword() == 0){
     digitalWrite(relay,LOW); Serial.println("Relay Apagado: Electroiman Desactivado...");
-  }else Serial.println("Digito Incorrecto.");
+  }else Serial.println("Digito Incorrecto."); 
+  digitalWrite(Error,HIGH); delay(200); digitalWrite(Error,LOW);
 }
