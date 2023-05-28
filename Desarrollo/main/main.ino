@@ -3,25 +3,25 @@
 #include "stdlib.h"
 
 //Declaraciones de pinout.
-const int t1      = A0;
-const int t2      = D0;
-const int t3      = D5;
-const int t4      = D6;
-const int t5      = D7;
-const int t6      = D8;
-const int t7      = D1;
-const int relay   = D3;
-const int Error   = D2;
+const int c3      = D4;
+const int f1      = D0;
+const int f2      = D5;
+const int f3      = D6;
+const int c1      = D7;
+const int c2      = D8;
+const int f4      = D1;
+const int relay   = D2;
+const int Error   = D3;
 
 //Declaraciones de teclado matricial.
 const short int largopassword = 10;  //determina el largo de la passwordaseña superior (si no es igual tendra problema de funcionamiento)
-const char PASSWORD[largopassword] = { '8', '4', '5', '5', '6', '6', '8', '5', '5', '4'};  //modiicar estos numeros para cambiar la passwordaseña
+const char PASSWORD[largopassword] = { '1', '1', '4', '7', '7', '9', '1', '7', '4', '4'};  //modiicar estos numeros para cambiar la passwordaseña
 
 char key;
 const int cantidadFilas = 4; //cuatro filas
 const int cantidadColumnas = 3; //cuatro columna
-byte pinFilas[cantidadFilas] = {t1,t2,t3,t4}; //este es el pinout de las filas del teclado
-byte pinColumnas[cantidadColumnas] = {t5,t6,t7}; //este es el pinout de las columnas del teclado
+byte pinFilas[cantidadFilas] = {f1,f2,f3,f4}; //este es el pinout de las filas del teclado
+byte pinColumnas[cantidadColumnas] = {c1,c2,c3}; //este es el pinout de las columnas del teclado
 
 char teclas[cantidadFilas][cantidadColumnas] = {
   {'1', '2', '3'},
